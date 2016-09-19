@@ -76,3 +76,53 @@ If there is no change to script every step, you need to provide instructions lik
  1. Step 1: take raw file, run version 3.1.2 of summarize software with parameters a = 1, b = 2, c = 3
  2. Step 2: run software separately for each sample
  3. Step 3: take colum three of outputfile.out for each sample and that is the corressponding row in the output data set
+
+
+## Getting the data
+
+### Get/set your working directory
+
+ * A basic component of working with data is knowing your working directory
+ * The two main commands are getwd() and setwd()
+ * Be aware of relative vs absolute paths
+  *__Relative__ - setwd("./data",) setwd("../")
+  *__Absolute__ - setwd("/User/jtleed/data/")
+ * Important differenc ein Windows setwd("C:\\Users\\Andrew\\Downloads")
+
+
+### Cheking for and creating directories
+
+ * __file.exists("directoryName")__ will check to see if the directory exists
+ * __dir.create("directoryName")__ will create a directory if it dosen't exists
+ * Here is an example:
+
+`if(!file.exists("data")){
+ dir.create("data")
+}`
+
+### Getting data form the internet
+ * Downloads a file from the internet
+ * Even if you could do this by hand, it help reproductibility
+ * Importatn parameters are url, destfile (Where it goes), method
+ * Useful for downloading tab-delimited, csv, and other files
+
+`fileUrl <- "https://data.baltimorecity.gov/api/views/dz54-2aru/rows.csv?accessType=DOWNLOAD"
+download.file(fileUrl, destfile = "./data/camera/csv", method = "curl")`
+(curl method works in Mac for https)
+
+`list.files("/data")`
+
+`##[1] "cameras.csv"`
+
+`dateDownloaded <- date()`
+
+`dateDownloaded`
+
+`##[1] "Sun Jan 12 21:37:44 2014"`
+
+###Some notes about download.file()
+ * If the url stats with http you can use download.file()
+ * If the url stats with http on Windows you may be ok
+ * If the url starts with https on Mac you may need to set method="curl"
+ * If the file is big, it can take a while
+ * Be sure to record when you downloaded
