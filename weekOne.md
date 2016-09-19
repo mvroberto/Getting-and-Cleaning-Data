@@ -57,10 +57,22 @@ __Quantitative__: Height, weight, blood pressure
  1. Information about the variables (including units!) in the data set not contained in the tidy data
  2. Information about the summary choices you made
  3. Information about the experimental study design you used
- 4. 
  
+
 *Some important tips*
 
- * A common format for this document is a Word/text file.
+ * A common format for this document is a Word/text file. (Or a markdown file)
  * There shoud be a section called "Study Design" that has a thorough desctiption of how you collected the data.
  * There must be a section called "Code Book" that describes each varable and its units.
+
+
+### The instuction list
+ * Ideally a computer Script (R, Python, etc)
+ * The input for the script is the raw data
+ * The output is the processed data, Tidy Data
+ * There are no parameters on the scrips. (This is really important, the scripts should be plug and play)
+ 
+If there is no change to script every step, you need to provide instructions like:
+ 1. Step 1: take raw file, run version 3.1.2 of summarize software with parameters a = 1, b = 2, c = 3
+ 2. Step 2: run software separately for each sample
+ 3. Step 3: take colum three of outputfile.out for each sample and that is the corressponding row in the output data set
