@@ -126,3 +126,26 @@ download.file(fileUrl, destfile = "./data/camera/csv", method = "curl")`
  * If the url starts with https on Mac you may need to set method="curl"
  * If the file is big, it can take a while
  * Be sure to record when you downloaded
+
+### Loading flat files - read.table()
+
+ * This is the main function for reading data in R
+ * flexible and robust but requires more parameters
+ * Reads the data into RAM - big data can cause problems
+ * Important parameters file, header, sep, row.names, nrows
+ * Related: read.csv(), read.csv2()
+ 
+ `cameraData <- read.table("./data/camera.csv", sep="", header = TRUE)`
+ `head(cameraData)`
+ 
+ *read.csv -- automatically ads sep and header
+ 
+ #### other important parameters for read.table()
+  * quote- you can tell R wether there are any quoted values quote ="" means no quotes
+  * na.string - set the character that represents a missing value/
+  * nrows- how many rows to readof the file ( nrows =10)
+  * skip - number of lines to skip before starting to read
+  
+  (The biggest trouble with reading flat files are quotation marks,  placed in data balues, setting quote="" often resolves these).
+ 
+ 
