@@ -246,5 +246,10 @@ __Check subsetting rules in data.table documentation__
 * The subsetting function is modified for data.table
 * The argumnet you pass after comma is called an "Expression"
 * In R an expression is a collection of statements enclosed in curely brackets
+* Has especial variables like .N
+* it has keys for subsetting and joining tables (If you have the same key in both data frames)
+* Fast reading using (Temporary file __tempfile()__ )
  
+
+
 
