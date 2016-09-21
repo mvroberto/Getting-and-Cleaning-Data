@@ -216,4 +216,20 @@ download.file(fileUrl, destfile = "./data/camera/csv", method = "curl")`
  * Array ( ordered, comma separated enclosed in square brackets [])
  * Object (unordered, comma separated collection of key:value pairs in curley brackets {})
 
+`library(json)`
 
+`jsonData <- fromJSON("URL")`
+
+`names(jsonData)`
+
+`names(json$owner)`
+
+`json$owner$login`
+
+#### Writing data frames to JSON
+
+`myjson <- toJSON(iris, pretty=TRUE)`
+`cat(myjson)`
+
+
+(pretty ---- give you nice indentation), fromJason() ---- changes contento to a data frame.
