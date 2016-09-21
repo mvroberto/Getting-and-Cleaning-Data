@@ -203,4 +203,17 @@ download.file(fileUrl, destfile = "./data/camera/csv", method = "curl")`
 `scores <- xpathSApply(doc,"//li[@class='score']", xmlValue)`
 `teams <- xpathSApply(doc,"//li[@class=`team-name']",xmlValue)`
 
- 
+### Reading JSON
+ * Javascript Object Notation
+ * Lightweight data storage
+ * Common format for data from application programming interfaces (APIS)
+ * Similar structure to XML but different syntax / format
+
+#### In Json Data is stored as
+ * Numbers (Boolean)
+ * Strings (Double Quoted)
+ * Boolean (true or false)
+ * Array ( ordered, comma separated enclosed in square brackets [])
+ * Object (unordered, comma separated collection of key:value pairs in curley brackets {})
+
+
