@@ -148,4 +148,26 @@ download.file(fileUrl, destfile = "./data/camera/csv", method = "curl")`
   
   (The biggest trouble with reading flat files are quotation marks,  placed in data balues, setting quote="" often resolves these).
  
+ ###Download Excel Data
+  `if(!file.exists("data")){dir.create("data")} `
+  `fileUrl <-"https://data.baltimorecity.gov/api/views/dz54-2aru/rows.csv?accessType=DOWNLOAD&bom=true" `
+  `download.file(fileUrl,desfile="./data/camera.xlsx",method="curl")`
+  `dateDownloaded <- date()`
+ 
+ Use read excel packaged like {xlsx package} read.xlsx(), read.xlsx2()
+  `library(xlsx)`
+  `cameraData <- read.xlsx("./data/camera/xlsx",sheedIndex = 1, header = TRUE"`
+  `head(cameraData)`
+  
+ SheetIndex (Which sheet is the data on)
+ conIndex, rowIndex (choose which row or column you will read)
+ 
+ ### Writing Excel Files
+  * The write.xlsx function will write out an Excel file with simitar arguments
+  * read2.xlsx is much faster than read.xlsx, but for reading subsets of rows might be unstable
+  * The __XLConnect__ package has more options for writing and manipulating Excel Files
+  * The __XLConnect vignette__ is a good place to start for that package
+  * In general it is advided to store your data in either a database or a in comma separated files (.csv) or tab separated files (.tab/.txt) as they are easier to distribute.
+ 
+ 
  
