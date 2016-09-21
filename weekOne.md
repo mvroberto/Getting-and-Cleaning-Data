@@ -170,4 +170,37 @@ download.file(fileUrl, destfile = "./data/camera/csv", method = "curl")`
   * In general it is advided to store your data in either a database or a in comma separated files (.csv) or tab separated files (.tab/.txt) as they are easier to distribute.
  
  
+ ## Reading XML
+  * Extensible Markup Language
+  * Frquently used to store structured data
+  * Particulary widely used in internet aplications
+  * Extracting XML is the basis for most web scraping
+  * Components : (Mark up - Labels that give the text structure; Content - the actual text of the document)
+  
+  XML > Check in wikipedia
+  
+  ### How to read XML
+  
+  `library(xml)`
+  `fileUrl <- "URL"`
+  `doc <- xmlTreeParse(fileUrl, useInternal=TRUE)`
+  `rootNode <- xmlRool(doc)`
+  `xmlName(rootNode)`
+  
+  Too access tags: rootNodes[[1]], rootNodes[[1][[1]]
+  
+  #### Programatically extact parts of the file
+  `xmlSapply(rootNode,xmlValue)`
+  `xpathSapply(rootNode,"//name",xmlValue)`
+  `xpathSApply(rootNode,"//price",xmlValue)`
+   (Learn XPATH)
+   
+### Extract content by attributes (HTML)
+ * Use htmlTreeParse
+
+`fileUrl <- "ULR"'
+`doc <- htmlTreeParse(fileUrl, useInternal = TRUE)`
+`scores <- xpathSApply(doc,"//li[@class='score']", xmlValue)`
+`teams <- xpathSApply(doc,"//li[@class=`team-name']",xmlValue)`
+
  
