@@ -231,5 +231,20 @@ download.file(fileUrl, destfile = "./data/camera/csv", method = "curl")`
 `myjson <- toJSON(iris, pretty=TRUE)`
 `cat(myjson)`
 
-
 (pretty ---- give you nice indentation), fromJason() ---- changes contento to a data frame.
+
+### Using Data.table
+ * Inherets from data.frame ( All functions that accept data.frame work on data.table)
+ * Written in C so it is much faster
+ * Much, much faster at subsetting, group and updating
+ 
+`DT = data.table(x = rnorm(9), y = rep(c("a","b","c"), each = 3), z=rnorm(9))`
+See all the data tables in memory ----- `tables()`
+
+__Check subsetting rules in data.table documentation__
+
+* The subsetting function is modified for data.table
+* The argumnet you pass after comma is called an "Expression"
+* In R an expression is a collection of statements enclosed in curely brackets
+ 
+
