@@ -156,7 +156,7 @@ download.file(fileUrl, destfile = "./data/camera/csv", method = "curl")`
  
  Use read excel packaged like {xlsx package} read.xlsx(), read.xlsx2()
   `library(xlsx)`
-  `cameraData <- read.xlsx("./data/camera/xlsx",sheedIndex = 1, header = TRUE"`
+  `cameraData <- read.xlsx("./data/camera/xlsx",sheetIndex = 1, header = TRUE"`
   `head(cameraData)`
   
  SheetIndex (Which sheet is the data on)
