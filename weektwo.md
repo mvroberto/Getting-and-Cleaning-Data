@@ -105,3 +105,10 @@
    `json1 <- content(homeTL)`
    `json2 <- jsonlite::fromJSON(toJSON(json1))`
    `json[1,1:4]`
+
+ #### Reading Appis in general
+ 
+ * httr allows GET, POST, PUT, DELETE rquest if you are authorized
+ * You can authenticate with a user name or a password
+ * Most modern APIs use something like oauth
+ * httr works well with Facebook , Google, Twitter, Github, etc
