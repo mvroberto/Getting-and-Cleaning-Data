@@ -1,5 +1,7 @@
 
 
+
+
 answer_one <- function(){
 library(httr)
 library(httpuv)
@@ -38,9 +40,28 @@ answer_two <- function(){
 }
 
 
-answer_three <- function(){
+answer_four <- function(){
 	library(XML)
-	fileUrl <- "http://biostat.jhsph.edu/~jleek/contact.html"
-	doc <- htmlTreeParse(fileUrl)
-	doc[[1]][[10]]
+	library(httr)
+	library(sqldf)
+	
+	date_downloaded <- date()
+	directory_files <- dir()
+	if(!is.element("questionFour.html",directory_files)){
+		fileUrl <- "http://biostat.jhsph.edu/~jleek/contact.html"
+		download.file(fileUrl, destfile ="/Users/robertovallemateos/Desktop/gitHub_excersices/gettingData/questionFour.html")
+	}
+	
+	doc <- system.file("data","questionFour.html", package = "XML" )
+	readed_html <- htmlParse(doc)
+	readed_html
+	
+	
+}
+
+a <- function(){
+	library(XML)
+	library(httr)
+	
+	file <- system
 }
