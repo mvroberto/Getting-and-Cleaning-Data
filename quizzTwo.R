@@ -1,7 +1,6 @@
 
 
 
-
 answer_one <- function(){
 library(httr)
 library(httpuv)
@@ -52,10 +51,19 @@ answer_four <- function(){
 		download.file(fileUrl, destfile ="/Users/robertovallemateos/Desktop/gitHub_excersices/gettingData/questionFour.html")
 	}
 	
-	doc <- system.file("data","questionFour.html", package = "XML" )
-	readed_html <- htmlParse(doc)
-	readed_html
+	readed_html <- htmlParse("/Users/robertovallemateos/Desktop/gitHub_excersices/gettingData/questionFour.html", useInternal = TRUE)
+	my_file <- capture.output(readed_html)
+	my_file
 	
+	file_lenght <- c(nchar(my_file[8]),nchar(my_file[20]),nchar(my_file[30]),nchar(my_file[100]))
+	my_file
+		
+	make_connection <- url("http://biostat.jhsph.edu/~jleek/contact.html")
+        htmlCode <- readLines(make_connection)
+	close(make_connection)
+	c(nchar(htmlCode[10]))
+	
+	my_list <- list(my_file,htmlCode)
 	
 }
 
@@ -63,5 +71,23 @@ a <- function(){
 	library(XML)
 	library(httr)
 	
-	file <- system
+	make_connection <- url("http://biostat.jhsph.edu/~jleek/contact.html")
+	htmlCode <- readLines(make_connection)
+	close(make_connection)
+	return(c(nchar(htmlCode[10]), nchar(htmlCode[20]), nchar(htmlCode[30]), nchar(htmlCode[100])))
+}
+
+answer_five <- function(){
+	library(httr)
+	library(sqldf)
+	
+	date_downloaded <- date()
+	directory_files <- dir()
+	if(!is.element("questionFive.for",directory_files)){
+		fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fwksst8110.for"
+		download.file(fileUrl, destfile ="/Users/robertovallemateos/Desktop/gitHub_excersices/gettingData/questionFive.for")
+	}
+	
+	my_file <- read.fwf("questionFive.for",100)
+	my_file
 }
