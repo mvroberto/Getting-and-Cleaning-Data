@@ -50,4 +50,15 @@
   
   library(reshape2)
   * __melt()
-  * dcats(carMelt, cyl ~ variable)
+  * dcast(carMelt, cyl ~ variable)
+  * Split
+  *ddply
+  
+#### dplyr
+Created to work with data frames
+
+The dara drame is a key data structure in statistics and in R.
+ * There is one observation per row
+ * Each column represents a variable or measure or characteristic
+ * Primary implementarion that you will use in the default R implementation
+ * Other imlplementations, particularly relational databases systems
