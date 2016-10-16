@@ -62,3 +62,20 @@ The dara drame is a key data structure in statistics and in R.
  * Each column represents a variable or measure or characteristic
  * Primary implementarion that you will use in the default R implementation
  * Other imlplementations, particularly relational databases systems
+
+##### dplyr Verbs
+ * select: return a subset of the columns of a data frame
+ * filter: extract a subset of rows from a data frame based on logical condition
+ * arrange: reorder rows of a data frame
+ * rename: rename variables in a data frame
+ * mutate: add new variables / columns or transform existing variavles
+ * summarise /  summarize: generate summary statistics of different variables in the data frame, possibly within strata
+ 
+ ##### dyplyr Properties
+ 
+  * The first argument is a data frame
+  * The subsequent arguments describe waht to do with it, and you can refer to columns in the data frame directly without using the $ operator
+  * The result is a new data frame
+  * Data Frames must be propertly formatted and annotated for this to all be usefull
+  
+ 
