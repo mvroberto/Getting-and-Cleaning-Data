@@ -71,11 +71,18 @@ The dara drame is a key data structure in statistics and in R.
  * mutate: add new variables / columns or transform existing variavles
  * summarise /  summarize: generate summary statistics of different variables in the data frame, possibly within strata
  
- ##### dyplyr Properties
+ ##### dplyr Properties
  
   * The first argument is a data frame
   * The subsequent arguments describe waht to do with it, and you can refer to columns in the data frame directly without using the $ operator
   * The result is a new data frame
   * Data Frames must be propertly formatted and annotated for this to all be usefull
   
+ Pipeline operator %>%
+ 
+ * dplyr can work with other data frame "backends"
+ * data.table for large fast tables
+ * SQL interface for relational databases via DBI package
+ 
+ #### Merging data
  
