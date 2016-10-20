@@ -1,4 +1,4 @@
- answer_one <- function(){
+answer_one <- function(){
 	fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv"
 	downloaded_file <- download.file(fileUrl, destfile = "/Users/robertovallemateos/Desktop/GaT_Coursera/americanCommunity.csv", method = "curl")
 	readed_file <- read.csv("americanCommunity.csv")
@@ -46,9 +46,16 @@ pre_answer_four2 <- function(){
 
 
 answer_three <- function(){
-	gdp_file <- read.csv("gdp.csv")
+	library(dplyr)
 	education_file <- read.csv("education.csv")
+	gdp_file <- read.csv("gdp.csv")
 	
-	str(education_file)
+	##str(education_file)  ###CountryCode
+	##str(gdp_file) ###X
 	
-}
+	merged_file <- merge(education_file, gdp_file, by.x = "CountryCode", by.y = "X")
+	##str(merged_file)
+	selected <- select(merged_file, Long.Name, CountryCode,Gross.domestic.product.2012)
+	merged_file$Gross.domestic.product.2012 
+	
+	}
