@@ -27,7 +27,7 @@ answer_two <- function(){
 pre_answer_four1 <- function(){
 	
 	fileUrl = "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv"
-	downloaded_file <-  download.file(fileUrl, destfile = "/Users/robertovallemateos/Desktop/GaT_Coursera/gdp.csv")
+	downloaded_file <-  download.file(fileUrl, destfile = "/Users/mvroberto/Desktop/r/clean_data/gdp.csv")
 	downloaded_file
 	
 	
@@ -37,7 +37,7 @@ pre_answer_four1 <- function(){
 pre_answer_four2 <- function(){
 	
 	fileUrl = "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv"
-	downloaded_file <-  download.file(fileUrl, destfile = "/Users/robertovallemateos/Desktop/GaT_Coursera/education.csv")
+	downloaded_file <-  download.file(fileUrl, destfile = "/Users/mvroberto/Desktop/r/clean_data/education.csv")
 	downloaded_file
 	
 	
@@ -56,6 +56,9 @@ answer_three <- function(){
 	merged_file <- merge(education_file, gdp_file, by.x = "CountryCode", by.y = "X")
 	##str(merged_file)
 	selected <- select(merged_file, Long.Name, CountryCode,Gross.domestic.product.2012)
-	merged_file$Gross.domestic.product.2012 
-	
+	 gdp <- as.numeric(as.character(merged_file$Gross.domestic.product.2012))
+	complete_file <- cbind(selected, gdp)
+	filtered_file <-filter(complete_file, gdp >= 1)
+	 arranged <- arrange(filtered_file,-gdp)
+	 arranged
 	}
