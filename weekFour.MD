@@ -64,3 +64,9 @@ Metacharacters are the grammar
 * \ ---- to not consider as a metacharacter
 * * and + are metacharacters used to indicate repetition; means "any number, including none, of the item" and + mans at least one of the items"
 * {} are refered to as interval quiantifiers; let us specify the minimun and maximum number of matches of an expression.
+
+##### Regular expressions Summary
+* Regular expressions are used in many different languages; not unique to R
+* regular expressions are composed of literals and metacharacters that represnt sets or classes of characters/words
+* Text prcessing via regular expressions is a very powerful wat to extratc data from "unfriendly" sources 
+* Used with the fucnitons , grep, grepl, sub, gsub, and others that involve searching  for the text strings
