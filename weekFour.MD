@@ -59,4 +59,8 @@ Metacharacters are the grammar
 * [] any character
 * [a-z] [0-9]
 * [^?.]$
-* 
+* . followed by any character
+* Alternatives |  (flood|earthquake|hurricane) -----  ^([Gg]ood|[Bb]ad)
+* \ ---- to not consider as a metacharacter
+* * and + are metacharacters used to indicate repetition; means "any number, including none, of the item" and + mans at least one of the items"
+* {} are refered to as interval quiantifiers; let us specify the minimun and maximum number of matches of an expression.
